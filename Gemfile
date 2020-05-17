@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in cscop.gemspec
+# Specify your gem's dependencies in csvcop.gemspec
 gemspec
 
 gem "rake", "~> 12.0"
