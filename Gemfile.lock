@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    csvcop (0.1.0)
+    csvcop (0.1.1)
       activesupport (~> 6.0.3)
       csv (~> 3.1.2)
       thor (~> 1.0.1)
