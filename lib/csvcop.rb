@@ -6,7 +6,5 @@ require_relative "csvcop/config"
 require_relative "csvcop/cop"
 require_relative "csvcop/cop/uniq_column"
 
-require "byebug"
-
 module CsvCop
 end
