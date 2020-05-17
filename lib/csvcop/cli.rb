@@ -4,7 +4,7 @@ require "csv"
 
 module CsvCop
   class Cli < Thor
-    desc "run {CSV File Path} {options}", "check csv file"
+    desc "start {CSV File Path} {options}", "check csv file"
     option "config", aliases: "-c", type: :string
     def start(csv_file_path)
       config = CsvCop::Config.new(options[:config]).read
