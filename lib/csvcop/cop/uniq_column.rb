@@ -23,11 +23,20 @@ module CsvCop
 
         private
         def on_ensure
+          msg = ensure_deplicated_elementes
+          unless msg.empty?
+            return "ununiqness element.\n#{msg}"
+          end
+
+          false
+        end
+
+        def ensure_deplicated_elementes
           msg = ""
           by_col_csv = @csv.by_col
           by_col_csv.each_with_index do | col, col_index |
             uniq_col = col.flatten.map{|v| v.to_s}.uniq
-            col = strize_values(col.flatten)
+            col = stringify_values(col.flatten)
             
             uniq_col.each do | uniq_col_row | 
               if col.count(uniq_col_row) > 1
@@ -36,14 +45,10 @@ module CsvCop
             end
           end
 
-          unless msg.empty?
-            return "ununiqness element.\n#{msg}"
-          end
-
-          false
+          msg
         end
 
-        def strize_values(array)
+        def stringify_values(array)
           array.map{|v| v.to_s}
         end
       end
