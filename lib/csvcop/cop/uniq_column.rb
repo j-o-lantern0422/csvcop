@@ -18,6 +18,7 @@ module CsvCop
         end
 
         def run
+          return false unless DeplicatedElementInOneColumn.enable?(@config)
           on_ensure
         end
 

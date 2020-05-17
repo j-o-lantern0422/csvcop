@@ -9,7 +9,7 @@ module CsvCop
     CSVCOP_HOME = File.realpath(File.join(File.dirname(__FILE__), '..', '..'))
     DEFAULT_FILE = File.join(CSVCOP_HOME, 'config', 'default.yml')
 
-    def initialize(rule_file_path)
+    def initialize(rule_file_path=nil)
       unless rule_file_path.nil?
         raise ConfigNotFoundError unless File.exist?(rule_file_path)
         @original_rule = YAML.load_file(rule_file_path)

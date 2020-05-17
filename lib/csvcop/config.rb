@@ -1,7 +1,7 @@
 require 'active_support/core_ext'
 module CsvCop
   class Config
-    def initialize(config)
+    def initialize(config=nil)
       conf = CsvCop::ConfigLoader.new(config).load
       @config = conf.deep_symbolize_keys
     end
