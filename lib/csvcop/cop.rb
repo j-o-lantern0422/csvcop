@@ -6,9 +6,10 @@ module CsvCop
       def initialize(csv, config)
         @csv = csv
         @config = config
-        @cops = [
-          CsvCop::Cop::Lint::UniqColumn.new(@csv, @config)
-        ]
+        @cops = []
+        if CsvCop::Cop::Lint::DeplicatedElementInOneColumn.enable?(@config)
+          @cops.push(CsvCop::Cop::Lint::DeplicatedElementInOneColumn.new(@csv, @config))
+        end
         @msg = "CsvCop ensure offences.\n"
       end
 

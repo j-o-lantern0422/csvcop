@@ -1,7 +1,7 @@
 module CsvCop
   module Cop
     module Lint
-      class UniqColumn < Cop
+      class DeplicatedElementInOneColumn < Cop
         MSG = 'Column is must uniq element.'
 
         def initialize(csv, config)
@@ -9,12 +9,19 @@ module CsvCop
           @config = config
         end
 
+        def self.enable?(config)
+          config[:AllCops][config_key][:Enable]
+        end
+
+        def self.config_key
+          self.name.split("::").last.to_sym
+        end
+
         def run
           on_ensure
         end
 
         private
-
         def on_ensure
           msg = ""
           by_col_csv = @csv.by_col

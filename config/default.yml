@@ -3,3 +3,6 @@ AllCops:
   Delimiter: ","
   Header: true
   NotUsedColumn: false
+  DeplicatedElementInOneColumn:
+    Enable: true
+  
