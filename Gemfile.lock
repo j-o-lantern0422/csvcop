@@ -2,6 +2,10 @@ PATH
   remote: .
   specs:
     csvcop (0.1.0)
+      activesupport
+      csv
+      thor
+      yaml
 
 GEM
   remote: https://rubygems.org/
