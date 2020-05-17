@@ -1,0 +1,5 @@
+AllCops:
+  MultiCaracterDelimiter: false
+  Delimiter: ","
+  Header: true
+  NotUsedColumn: false
